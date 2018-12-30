@@ -10,6 +10,16 @@ print("| 2) menu - show the commands")
 print("| 3) quit - to exit the program")
 print("| 4) clear - to clear the screen")
 
+
+def ip_check(adress):
+	ip = int(adress)
+	if (ip[0:3] or ip[5:8] or ip[9:12] or ip[13:16] > 255):
+		print("invalid")
+	elif(ip[0:3] or ip[5:8] or ip[9:12] or ip[13:16] < 0):
+		print("invalid")
+	else:
+   		print("valid")
+
 #program start
 while(True):
 
@@ -25,17 +35,8 @@ while(True):
 		print("| 2) menu - show the commands")
 		print("| 3) quit - close the program")
 	elif (user_command == 'clear'):
-		os.system('clear') # clear screen for windows and linux
+		os.system('clear')  # clear screen for windows and linux
 	else:
 		print("This is not adress or command")
-
-def ip_check(adress):
-	int(adress)
-	if (adress[0:3] or adress[5:8] or adress[9:12] or adress[13:16] > 255):
-		print("invalid")
-	elif(adress[0:3] or adress[5:8] or adress[9:12] or adress[13:16] <= 0):
-		print("invalid")
-	else:
-   		print("valid")
-
-ip_check(user_command)
+	
+	ip_check(user_command)
